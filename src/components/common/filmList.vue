@@ -1,7 +1,7 @@
 <template>
   <div class="film-card"  @click="gotoDetail(film.movieId)">
     <div class="film-img">
-      <img v-lazyload="film.imgSrc">
+      <img v-lazy="film.imgSrc" :key="film.imgSrc">
     </div>
     <div class="film-outline">
       <div class="content">

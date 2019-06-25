@@ -6,7 +6,8 @@ import router from './router'
 import store from './store'
 import './mock/mock.js'
 import Axios from 'axios'
-import LazyLoad from '@/utils/lazyLoad.js'
+// import LazyLoad from '@/utils/lazyLoad.js'   // 自定义指令懒加载
+import LazyLoad from 'vue-lazyload'
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
@@ -15,7 +16,9 @@ Vue.prototype.$http = Axios
 Vue.prototype.$BMap = window.BMap
 Vue.use(VueAwesomeSwiper)
 
-Vue.use(LazyLoad)
+Vue.use(LazyLoad, {
+    loading: 'https://gw.alicdn.com/tps/i1/TB147JCLFXXXXc1XVXXxGsw1VXX-112-168.png'
+})
 
 Vue.config.productionTip = false
 

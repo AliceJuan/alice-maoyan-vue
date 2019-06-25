@@ -61,7 +61,7 @@
         },
         created () {
             this.initData()
-            //          this.loadData()
+            // this.loadData()
         },
         mounted () {
             this.currentCity = this.$store.state.currentCity
@@ -83,6 +83,9 @@
             },
             toggleHotItem (hotActive) {
                 this.hotShowFlag = hotActive === 0
+                this.$nextTick(() => {
+                    document.documentElement.scrollTop = 1
+                })
             }
         }
     }

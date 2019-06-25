@@ -4,7 +4,7 @@
     <div class="horizontal-container noscroll-bar">
       <div class="horizontal-scroll" :style="containerWidth">
         <div v-for="(item,index) in items" :key='index' class="horizontal-scroll-item" @click="gotoDetail(item.movieId)">
-          <img :src="showImgSrc(item)" alt="">
+          <img v-lazy="showImgSrc(item)" alt="">
           <div class="horizontal-scroll-item-toggle" v-if="!showType">
             <span></span>
           </div>
